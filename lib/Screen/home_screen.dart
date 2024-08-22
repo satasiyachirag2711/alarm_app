@@ -56,12 +56,35 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.alarm, color: Colors.white, size: screenWidth * 0.07)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search, color: Colors.white, size: screenWidth * 0.07)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.menu, color: Colors.white, size: screenWidth * 0.07)),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.alarm,
+              color: Colors.white,
+              size: screenWidth * 0.07,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+              size: screenWidth * 0.07,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+              size: screenWidth * 0.07,
+            ),
+          ),
         ],
         leading: IconButton(
-          onPressed: () { _scaffoldKey.currentState?.openDrawer(); },
+          onPressed: () {
+            _scaffoldKey.currentState?.openDrawer();
+          },
           icon: Icon(Icons.menu, color: Colors.white, size: screenWidth * 0.07),
         ),
       ),
@@ -71,17 +94,27 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('John Doe', style: TextStyle(fontSize: screenWidth * 0.05, fontWeight: FontWeight.bold)),
-              accountEmail: Text('johndoe@example.com', style: TextStyle(fontSize: screenWidth * 0.04)),
-              currentAccountPicture: CircleAvatar(backgroundImage: NetworkImage('https://via.placeholder.com/150')),
+              accountName: Text('John Doe',
+                  style: TextStyle(
+                      fontSize: screenWidth * 0.05,
+                      fontWeight: FontWeight.bold)),
+              accountEmail: Text('johndoe@example.com',
+                  style: TextStyle(fontSize: screenWidth * 0.04)),
+              currentAccountPicture: const CircleAvatar(
+                  backgroundImage:
+                      NetworkImage('https://via.placeholder.com/150')),
             ),
             Expanded(
               child: ListView.builder(
                 itemCount: _drawerItems.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    leading: Icon(_drawerItems[index]['icon'], size: screenWidth * 0.07, color: Color(0xFF9B59B6)),
-                    title: Text(_drawerItems[index]['title'], style: TextStyle(fontSize: screenWidth * 0.045, fontWeight: FontWeight.bold)),
+                    leading: Icon(_drawerItems[index]['icon'],
+                        size: screenWidth * 0.07, color: const Color(0xFF9B59B6)),
+                    title: Text(_drawerItems[index]['title'],
+                        style: TextStyle(
+                            fontSize: screenWidth * 0.045,
+                            fontWeight: FontWeight.bold)),
                     onTap: () {},
                   );
                 },
@@ -93,9 +126,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF9B59B6), Color(0xFF8E44AD), Color(0xFF2980B9), Color(0xFF3498DB)],
+                colors: [
+                  Color(0xFF9B59B6),
+                  Color(0xFF8E44AD),
+                  Color(0xFF2980B9),
+                  Color(0xFF3498DB)
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -111,7 +149,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.white,
                   fontSize: screenWidth * 0.05,
                   fontWeight: FontWeight.bold,
-                  shadows: [Shadow(color: Colors.black.withOpacity(0.5), offset: Offset(2, 2), blurRadius: 4)],
+                  shadows: [
+                    Shadow(
+                        color: Colors.black.withOpacity(0.5),
+                        offset: const Offset(2, 2),
+                        blurRadius: 4)
+                  ],
                 ),
               ),
             ),
@@ -121,8 +164,9 @@ class _HomeScreenState extends State<HomeScreen> {
             right: screenWidth * 0.1,
             child: FloatingActionButton(
               onPressed: () {},
-              backgroundColor: Color(0xFF9B59B6),
-              child: Icon(Icons.add, color: Colors.white, size: screenWidth * 0.07),
+              backgroundColor: const Color(0xFF9B59B6),
+              child: Icon(Icons.add,
+                  color: Colors.white, size: screenWidth * 0.07),
             ),
           ),
         ],
